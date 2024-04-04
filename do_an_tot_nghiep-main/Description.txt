@@ -1,0 +1,2 @@
+Các thư mục controllers, models, node_modules, routes, views chứa các file code web
+File MEGA 2560.ino, ESP8266.ino là code của Arduino và ESP8266. 

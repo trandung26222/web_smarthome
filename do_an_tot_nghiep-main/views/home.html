@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Mali&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Mali&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Tilt Neon' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet'>
+    <link rel="stylesheet" href="./css/home1.css">
+    <link rel="stylesheet" href="./fontawesome-free-6.4.2-web/fontawesome-free-6.4.2-web/css/all.min.css">
+    <link rel="stylesheet" href="./css/gauge.css">
+    <link rel="stylesheet" href="./css/home2.css">
+</head>
+<body>
+    
+    <div class="top">
+        <div class="hi" style="font-weight: bold;"><p >Hi, Trần Dũng</p></div>
+        <div class="welcome"><p >Welcome,Home!</p></div>
+        <div class="home"><i class="fa-solid fa-house-chimney head_icon"   ></i></div>
+        <div class="thongbao"><i class="fa-solid fa-bell head_icon "></i></div>
+        <div class="logout"> <a href="./login.html"> <i class="fa-solid fa-right-from-bracket head_icon" ></i> </a></div>
+        <img src="https://cdn-icons-png.flaticon.com/512/3354/3354557.png" style="position: absolute;width: 150px;height: 150px;left: 380px;" alt="">
+      </div>
+
+    
+
+    <img src="img/nenchinh.png" alt="" style="position: absolute;bottom: 0px;right: 0px;width: 240px; height: 240px;">
+
+    <div class="container">
+        <div id="page1" class="trang1">
+
+            <div class="hengio">
+              
+              <p class="tieudehengio">Hẹn giờ bật/tắt</p>
+              <p style="position: absolute;top: 35%;left: 20px;">Sau</p>
+              <input type="text" id="thoiGian" name="thoiGian" style="position: relative; z-index: 1;top: 35%;left: 53px;width: 35px;">
+              <p style="position: absolute;top: 35%;left: 100px;">phút</p>
+              <select class="chonphong">
+                <option value="ledphongkhach">đèn phòng khách</option>
+                <option value="ledphongngu">đèn phòng ngủ</option>
+                <option value="ledphongbep">đèn nhà bếp</option>
+                <option value="quat" id="quat">quạt điện</option>
+              </select>
+              <p style="position: absolute;top: 35%;left: 270px;">sẽ tự động</p>
+              <select class="chonbattat">
+                <option value="bat">bật</option>
+                <option value="tat">tắt</option>
+              </select>  
+              
+              <button style="position: absolute;bottom: 10px;z-index: 1;right: 42px;bottom: 15px;height: 24px;width: 35px;cursor: pointer;" onclick="sendDataToServer()">
+                <p style="font-weight: bold;">OK</p>
+              </button>
+              
+            </div>
+
+
+            <div class="content-page1">
+                <div class="content-left">
+                    <div class="ctl1">
+                        
+                        <img src="images/lich1.png" alt="" class="hoverlich" >
+                        
+                        <p id="currentDay" style="position: absolute;top: 15px;right: 28px ;font-size: 27px;font-weight: bold;"></p>
+                        <p id="currentMonth" style="position: absolute;top: 50px;right: 12px;font-size: 12px;text-transform: uppercase;"></p>
+                        <p id="currentYear" style="font-size: 12px;position:absolute; top: 69px;right: 23px;"></p>
+
+                        <div class="content1" id="content1">
+                          <p style="color: white;font-size: 12px;position: absolute;top: 64px;left:20px ;">Nhà thông minh mang đến tiện nghi và sự hiện đại!</p>
+                          <p style="position: absolute;top: 20px;left: 20px;color: white;font-size: 24px;">Welcome, Home !</p>
+                          <i class="fa-solid fa-droplet" style="font-size: 60px;position: absolute;top: 130px;left: 50px; color: rgb(233, 121, 255);"></i>
+                          <i class="fa-solid fa-temperature-low" style="font-size: 67px;position: absolute;top: 125px;left: 200px;color: rgb(233, 121, 255);"></i>
+                          <p id="humidity" style="color: white;position: absolute;bottom: 20px;left: 50px;font-weight: bold;"></p>
+                          <p id="temperature" style="color: white; position: absolute; bottom: 20px; left: 200px;font-weight: bold;"></p>
+                          <div>
+                            <i class="fa-solid fa-cloud-rain" style="font-size: 68px;color: rgb(233, 121, 255);position: absolute;top: 130px;left: 350px;display: block;" id="comua"></i>
+                            <i class="fa-solid fa-cloud" style="font-size: 68px;color: rgb(233, 121, 255);position: absolute;top: 130px;left: 350px; display: none;" id="khongmua"></i>
+                            <p id="rain" style="position: absolute;color: white;font-weight: bold;bottom: 20px;left: 350px"></p>
+                          </div>
+                          <div>
+                            <i class="fa-solid fa-sun" id="troisang" style="font-size: 68px;color: rgb(233, 121, 255);position: absolute;top: 125px;right: 100px;"></i>
+                            <i class="fa-solid fa-moon" id="troitoi" style="font-size: 68px;color: rgb(233, 121, 255);position: absolute;top: 125px;right: 115px;"></i>
+                            <p id="troisangtoi"></p>
+                            
+
+                          </div>
+                        </div>
+
+                        <i class="fa-solid fa-caret-right fa-beat  switchcontent" id="nextContent" ></i>
+
+                        <div class="content2" id="content2">
+                          <div style="width: 500px;height: 200px;">
+                            <canvas id="chartDuBaoThoiTiet" ></canvas>
+                        </div>
+                        </div>
+                        
+                        
+                    </div>
+                    
+                    <div class="denphongkhach" id="denphongkhach">
+                        <img src="./images/livingroom.jpg" class="imgroom"  alt="">
+                        
+                        <div class="controlRoom">
+                          <i class="fa-solid fa-lightbulb imgbongden" ></i>
+                          <p class="textRoom">Phòng khách</p>
+                          <div class="nutbatden">
+                            <label class="toggle" >
+                              <input type="checkbox" name="toggleSwitch" id="toggleLiving" >
+                              <span class="slider round"></span>
+                            </label>
+                          </div>
+                        </div> 
+                    </div>
+                    <audio id="mp3battatden" src="./audio/battatden.mp3"></audio>
+                    <div class="denphongngu" id="denphongngu">
+                      <img src="./images/bedroom.jpg" class="imgroom"  alt="">
+                      <!-- <i class="fa-solid fa-caret-right fa-beat switchRoom" id="nextRoom" ></i> -->
+                      <div class="controlRoom">
+                        <i  class="fa-solid fa-lightbulb imgbongden" ></i>
+                        <p class="textRoom"> Phòng ngủ</p>
+                        <div class="nutbatden" >
+                          <label class="toggle" >
+                            <input type="checkbox" name="toggleSwitch" id="toggleBed" >
+                            <span class="slider round"></span>
+                          </label>
+                        </div>
+                      </div> 
+                    </div>
+                  <div class="denphongbep" id="denphongbep">
+                    <img src="./images/kitchen.jpg" class="imgroom"  alt="">
+                    <!-- <i class="fa-solid fa-caret-right fa-beat switchRoom" id="nextRoom" ></i> -->
+                    <div class="controlRoom">                      
+                      <i  class="fa-solid fa-lightbulb imgbongden" ></i>                     
+                      <p class="textRoom"> Nhà bếp</p>                     
+                      <div class="nutbatden">
+                        <label class="toggle" >
+                          <input type="checkbox" name="toggleSwitch" id="toggleKit" >
+                          <span class="slider round"></span>
+                        </label>
+                      </div>
+                    </div> 
+                  </div>
+                  <i class="fa-solid fa-caret-right fa-beat switchRoom" id="nextRoom" ></i>
+                  <div class="gaugeDoam">
+                    <p class="textHum">Độ ẩm</p>
+                    <div class="gauge">
+                      <div class="gauge__body">
+                        <div class="gauge__fill"></div>
+                        <div class="gauge__cover"></div>
+                      </div>
+                    </div>
+                    <p class="chiso0100" style="top: 115px;left: 17px;">0</p>
+                    <p class="chiso0100" style="top: 115px;right: 15px;">100</p>
+                  </div>
+
+
+
+
+                    
+                </div>
+                <div class="content-right">
+                    <div class="ctr1">
+                      <div class="changechart" id="changechart">
+                        <i id="chartIcon" class="fa-solid fa-chart-line fa-beat " style="color: rgb(255, 255, 255); position: absolute;top: 8px;left: 10px;font-size: 20px;"></i>
+                      </div>
+                      
+                        <div class="chart">
+                            <canvas id="barChart"></canvas>
+                        </div>
+                        <div class="tiendien">
+                            <p class="ctiendien" style="display: block;"><span id="tongtien"></span>vnđ/tháng</p>
+
+                        </div>
+                        
+                        <!-- <i class="fa-solid fa-angle-right fa-rotate-180 backday" ></i> -->
+                       
+                    </div>
+
+                    <div class="gas_door">
+                      <div class="khigas">
+                        <div class="colorgas">
+                          <p style="color: rgb(255, 255, 255);position: absolute;top: 5px;font-size: 20px;left: 15px;font-weight: bold;" > Cảm biến khí gas </p>
+                        </div>
+                        <audio id="mp3canhbaogas" src="./audio/rogas1.mp3"></audio>
+                        <div class="vienicongas" id="vienicongas">
+                          <i class="fa-solid fa-triangle-exclamation fa-fade" id="canhbaogas" style="position: absolute;font-size: 25px;color: #f2ff02;top: 2px;left: 3px;" ></i>
+                          <img src="./images/safe.png" id="safegas" alt="" style="position: absolute;width: 25px;height: 25px;top: 2px;left: 2px;cursor: pointer;">
+                        </div>
+                      </div>
+                      <div class="door">
+                        <img src="./images/door_open.png" alt="" style="width: 120px;height: 160px;cursor: pointer; position: absolute;top: 10px;display: none;left: -6px;" id="door_open" >
+                        <img src="./images/door_close.png" alt="" style="width: 120px;height: 160px;cursor: pointer; position: absolute;top: 10px;left: 0px;" id="door_close" >
+                        <div class="maindoor">
+                          <p style="color: white; font-size: 20px; font-weight: bold;position: absolute;top: 7px;left: 15px;">Cửa ra vào</p>
+                        </div>
+                        <audio id="mocuamp3" src="./audio/opendoor.mp3"></audio>
+                        <audio id="dongcuamp3" src="./audio/closedoor.mp3"></audio>
+
+                        <div class="openclose">
+                          <button class="buttonop" id="buttonop"><p>OPEN</p></button>
+                          <button class="buttoncl" id="buttoncl"><p>CLOSE</p></button>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="dkspeech">
+                      <div class="tieudespeech">Điều khiển bằng giọng nói</div>
+
+                      <div class="tatmic"  id="tatmic">
+                        <i class="fa-solid fa-microphone-slash  "></i>
+                      </div>
+                      <div class="batmic" id="batmic">
+                        <i class="fa-solid fa-microphone "   ></i>
+                      </div>
+                      
+                      <button class="btn-start">Start</button>
+                      
+                      <button class="btn-stop">Stop</button> 
+                        
+                      
+                      
+                  </div>
+                  <div class="quat">
+                    <p class="tieudequat">Quạt</p>
+                    <i class="fa-solid fa-fan iconfan"></i>
+                    <button class="battatquat" id="battatquat"></button>
+                  </div>
+
+
+                    
+                </div>
+            </div>
+        </div>
+          
+    </div>
+
+    <script src="./js/door.js"></script>
+    <script src="./js/battat.js"></script>
+    <script src="./js/room.js"></script>    
+    <script src="./js/chart.js"></script>
+    <script src="./js/gauge.js"></script>
+    <script src="./js/day.js"></script>
+    <script src="./js/dataSmartHome.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/hengio.js"></script>
+    <script src="./js/nextcontent.js"></script>
+    <script src="./js/dubaothoitiet.js"></script>
+    <script src="./js/quat.js"></script>
+</body>
+</html>

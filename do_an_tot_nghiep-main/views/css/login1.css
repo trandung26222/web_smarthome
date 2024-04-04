@@ -1,0 +1,77 @@
+* {
+	margin: 0;
+	padding: 0;	
+}
+.left{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    /* background: linear-gradient(to left,#22263E,#1f2444,#161d48,#17205a,#1f2862); */
+}
+.right{
+	font-family:  Tilt Neon ;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 50%;
+    height: 100%;
+    /* background: linear-gradient(to right,#22263E,#1f2444,#161d48,#17205a,#1f2862); */
+
+}
+.leftimg{
+    position: absolute;
+    bottom: -100px;
+    width: 100%;
+    height: 100%;
+}
+.loginscreen{
+    position: absolute;
+    width: 400px;
+    height: 587px;
+    top: 100px;
+    right: 100px;
+    background-color: white;border-radius: 14px;
+    box-shadow: 0 0 5px 5px rgba(255, 255, 255, 0.5);
+
+}
+.tieudelogin{
+    position: absolute;
+    width: 100%;
+    height: 20%;top: 0;background-color: rgb(255, 255, 255);
+    border-radius: 14px 14px 0 0;
+    box-shadow: 0 0 5px 5px rgba(255, 255, 255, 0.5);
+}
+.icon_login{
+    position: absolute;
+    width: 76px;height: 240px;
+    top: 20%;
+    background-color: aqua;
+    font-size: 23px;
+
+}
+.icusername{
+    position: absolute;
+    top: 0px; left: 30px;
+}
+.ichomename{
+    position: absolute;
+    top: 45px;left: 27px;
+}
+.icpassword{
+    position: absolute;
+    top : 90px;left: 30px;
+}
+.myForm{
+    position: absolute;
+    width: 319px; height: 240px;top: 150px;left: 80px;
+}
+.myForm input {
+    /* position: absolute; */
+    width: 80%;
+    height: 30px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}

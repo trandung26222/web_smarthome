@@ -1,0 +1,103 @@
+.hengio{
+    position: absolute;
+    width: 440px;
+    height: 105px;
+    background-color: (to left bottom,#22263E,#1f2444,#161d48,#17205a,#1f2862);
+    left: 566px;
+    bottom: 7px;
+    border-radius: 14px;
+    box-shadow: 0 0 5px 1px rgba(255, 255, 255, 0.5);
+    color: white;
+}
+
+.tieudehengio{
+    position: absolute;
+    top: 8px;
+    left: 155px;
+    
+}
+.chonphong {
+    position: relative;
+    z-index: 1;
+    top: 35%;
+    left: 100px;
+  }
+.chonbattat{
+    position: relative;
+    z-index: 1;
+    top: 35%;
+    left: 185px;
+}
+.content1{
+    display: block;
+}
+.content2{
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 30px;
+}
+.switchcontent{
+    position: absolute;cursor: pointer;
+    font-size: 40px;color: rgb(255, 255, 255);bottom: 80px;right: 10px;
+}
+#nextContent:hover {
+    color: rgb(238, 110, 255); /* Màu khi hover */
+    cursor: pointer; /* Hiển thị cursor là pointer khi hover */
+}
+.quat{
+    position: absolute;
+    width: 260px;
+    height: 30%;left: 270px; bottom: 35px;
+    /* background: linear-gradient(to left,#22263E,#1f2444,#161d48,#17205a,#1f2862); */
+    background: linear-gradient(to left,#22263E,#1f2444,#161d48,#17205a,#1f2862);
+    border-radius: 14px;
+    box-shadow: 0 0 5px 1px rgba(255, 255, 255, 0.5);
+
+  }
+  .tieudequat{
+    position: absolute;
+  top: 15px;left: 90px;
+  border-radius: 5px;
+  color: white;
+  }
+  .iconfan{
+    position: absolute;
+    font-size: 30px;
+    color: white;
+    top: 50px;
+    left: 15px;
+  }
+  .battatquat{
+    position: absolute;
+    top: 50px;
+    left: 90px;
+    height: 50px;
+    width: 100px;
+    background-color: rgb(234, 89, 247);
+    border-radius: 10px;
+    font-weight: bold;
+  }
+  #troisangtoi{
+    position: absolute;color: white;font-weight: bold;bottom: 20px;left: 540px;
+  }
+
+  .iconfan {
+    position: absolute;
+    font-size: 60px;
+    top: 47px;
+  }
+  
+
+  .animate-spin {
+    animation: spin 2s linear infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(360deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }

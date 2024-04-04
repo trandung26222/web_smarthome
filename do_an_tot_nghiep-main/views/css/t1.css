@@ -1,0 +1,133 @@
+
+* {
+	margin: 0;
+	padding: 0;	
+	
+    
+}
+
+.left{
+    
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 50%;
+    height: 100%;
+	overflow: hidden;
+    /* background: linear-gradient(to left,#22263E,#1f2444,#161d48,#17205a,#1f2862); */
+}
+.leftimg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+	bottom: -100px;
+}
+.right{
+	font-family:  Tilt Neon ;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 50%;
+    height: 100%;
+    /* background-color: rgb(255, 255, 255); */
+    /* background: linear-gradient(to right,#22263E,#1f2444,#161d48,#17205a,#1f2862); */
+
+}
+
+.screen {		
+    /* background:  linear-gradient(to right bottom, #b11efa, #b11efa,#b11efa,#f858c2,#f858c2,#f03fb5); */
+	/* background-color: rgb(245, 98, 98); */
+	background-color: white;
+    position: absolute;	
+	height: 600px;
+	width: 360px;	
+	box-shadow: 0px 0px 2px #ffffff;
+    border-radius: 10px;
+    right: 193px;
+    top: 77px;
+	border-color: black;
+}
+
+.screen__content {
+	z-index: 1;
+	position: relative;	
+	height: 100%;
+}
+.login {
+    position: absolute;
+	width: 320px;
+	padding: 20px;
+	padding-top: 70px;
+    top: 50px;
+    left: 50px;
+}
+
+.login__field {
+	padding: 20px 0px;	
+	position: relative;	
+    
+}
+
+.login__icon {
+	position: absolute;
+    left: -30px;
+	top: 30px;
+	color: #000000;
+}
+
+.login__input {
+    background-color: #ffffff;
+    border-radius: 10px;
+	box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+	border: none;
+	/* border-bottom: 2px solid #D1D1D4; */
+	/* background: none; */
+	padding: 10px;
+	padding-left: 24px;
+	
+	width: 65%;
+	transition: .2s;
+}
+
+
+.login__submit {
+	background: #ca59ff;
+	font-size: 17px;
+	margin-top: 65px;
+	padding: 16px 20px;
+	border-radius: 26px;
+	border: 1px solid #D4D3E8;
+	text-transform: uppercase;
+	font-weight: 700;
+	/* display: flex; */
+	align-items: center;
+	width: 50%;
+	color: #ca59ff;
+	/* box-shadow: 0px 2px 2px #000000; */
+	cursor: pointer;
+	transition: .2s;
+}
+
+.login__submit:active,
+.login__submit:focus,
+.login__submit:hover {
+	border-color: #ffffff;
+	outline: none;
+}
+
+.button__icon {
+	font-size: 24px;
+	margin-left: auto;
+	color: #ffffff;
+}
+
+
+.button__text{
+	color: white;
+}
+
+.forgetpw{
+	position: absolute;
+	top: 365px; right: 26px;
+	font-size: 15px;
+}

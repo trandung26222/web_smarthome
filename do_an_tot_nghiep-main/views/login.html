@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/t1.css">
+    <link href='https://fonts.googleapis.com/css?family=Tilt Neon' rel='stylesheet'>
+    <link rel="stylesheet" href="./fontawesome-free-6.4.2-web/fontawesome-free-6.4.2-web/css/all.css">
+</head>
+<body>
+
+    <img src="https://wallpapers.com/images/featured/universe-qs811igzbabl1m0o.jpg" alt="" style="width: 100%;height: 100%;">
+
+    <div class="left">
+        <img class="leftimg" src="./img/anhdep.png" alt="">
+    </div>
+    <div class="right">
+        <div class="screen">
+            <div class="screen__content">
+                <div class="signin" style="position: absolute;font-size: 30px;top: 40px;font-weight: bolder;left: 130px;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">Log In</div>
+                <form class="login" id="myForm">
+                    <div class="login__field">
+                        <i class="login__icon fas fa-user"></i>
+                        <input type="text" class="login__input" placeholder="User name " id="param1">
+                    </div>
+                    <div class="login__field">
+                        <i class="login__icon fas fa-home"></i>
+                        <input type="text" class="login__input" placeholder="HomeID" id="param3">
+                    </div>
+                    <div class="login__field">
+                        <i class="login__icon fas fa-lock"></i>
+                        <input type="password" class="login__input" placeholder="Password" id="param2">
+                    </div>
+                    <button class="button login__submit">
+                        <span class="button__text" style="color: white;font-weight: bold;">LOGIN</span>
+                        <!-- <i class="button__icon fas fa-chevron-right"></i> -->
+                    </button>				
+                </form>
+                <a href="#" class="forgetpw" onclick="sendForgetPassword()">Forget Password ?</a>
+            </div>
+            	
+        </div>
+    </div>
+    <script>
+        document.getElementById("myForm").addEventListener("submit", function(event) {
+        event.preventDefault(); 
+        
+        const name = document.getElementById("param1").value;
+        const pass = document.getElementById("param2").value;
+        const homename = document.getElementById("param3").value;
+        const data = {
+            username : name,
+            password: pass,
+            homename: homename,
+        };
+        
+        fetch("http://localhost:5000/login", {
+            method: "POST",
+            headers: {
+            "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => {
+            if (response.ok) {
+            localStorage.setItem("homename", homename);
+            window.alert('Mật khẩu chính xác '); var tmp = "./home.html";
+            // window.alert('Mật khẩu chính xác '); var tmp = "./";
+            window.location.href = tmp;
+            } else {
+            window.alert('Mật khẩu không đúng');
+            }
+        })
+        .catch(error => {
+            console.log("Lỗi:", error);
+        });
+        });
+        </script>
+        <script>
+           
+           async function sendForgetPassword() {
+               
+        
+                const url = 'http://192.168.10.25:5000/resetpassword'; // Thay đổi URL này thành URL thực tế
+                const formData ={
+                    username : document.getElementById('param1').value,
+                    homename: document.getElementById('param3').value
+                 };
+                try {
+                    const response = await fetch(url, {
+                        method: 'POST',
+                        headers: {
+                        'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(formData)
+                    });
+                    if(response.ok){
+                        window.alert('Kiểm tra mật khẩu mới trong email của bạn!');
+                    }
+                    else{
+                        window.alert('Username hoặc Homename không tồn tại!');
+                    }
+                    
+                    } catch (error) {
+                    console.error(error);
+                    }
+        
+                
+            }
+        </script>
+</body>
+</html>
